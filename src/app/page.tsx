@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
-      <main id="top" className="min-h-screen bg-white">
+      <main id="top" className="min-h-screen bg-offwhite">
         <section className="max-w-5xl mx-auto px-6 pt-32 pb-20">
           <p className="font-mono text-xs tracking-widest uppercase text-gold mb-5">
             Full-Stack Developer &amp; Writer - Nigeria

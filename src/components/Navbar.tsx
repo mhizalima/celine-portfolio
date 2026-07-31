@@ -14,16 +14,16 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b border-neutral-200">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur border-b border-navy">
       <nav className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#top" className="font-bold text-navy text-lg">
-          Celine_onChain
+        <a href="#top" className="font-bold text-white text-lg">
+          <span className="text-gold">Celine_onChain</span>
         </a>
 
         <ul className="hidden md:flex gap-8">
           {links.map((link) => (
             <li key={link.href}>
-              <a href={link.href} className="text-sm text-neutral-600 hover:text-navy transition">
+              <a href={link.href} className="text-sm text-neutral-300 hover:text-gold transition">
                 {link.label}
               </a>
             </li>
@@ -32,7 +32,7 @@ export default function Navbar() {
 
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-navy font-semibold"
+          className="md:hidden text-white font-semibold"
         >
           {open ? "Close" : "Menu"}
         </button>
@@ -45,7 +45,7 @@ export default function Navbar() {
               <a
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="text-sm text-neutral-600 hover:text-navy transition"
+                className="text-sm text-neutral-300 hover:text-gold transition"
               >
                 {link.label}
               </a>

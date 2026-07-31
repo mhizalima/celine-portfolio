@@ -23,7 +23,7 @@ export const platforms = [
   {
     name: "Paragraph",
     description: "Primary writing platform",
-    url: "",
+    url: "mailto:celinebless2002@gmail.com",
   },
   {
     name: "X / Twitter",
@@ -34,5 +34,10 @@ export const platforms = [
     name: "LinkedIn",
     description: "Career reflections",
     url: "https://www.linkedin.com/in/celine-ojo",
+  },
+  {
+    name: "Medium",
+    description: "Articles and technical writing",
+    url: "https://medium.com/@mhizalima",
   },
 ];
