@@ -1,18 +1,30 @@
+const links = [
+  { label: "GitHub", href: "https://github.com/mhizalima", external: true },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/celine-ojo", external: true },
+  { label: "Email", href: "mailto:celinebless2002@gmail.com", external: false },
+];
+
 export default function Footer() {
   return (
-    <footer className="bg-navy border-t border-navy">
+    <footer className="bg-[#0A1931] text-[#F6FAFD]">
       <div className="max-w-5xl mx-auto px-6 py-8 flex flex-wrap items-center justify-between gap-4">
-        <span className="font-bold text-white text-sm">Ojo Celine Shalom, Celine_onChain</span>
+        <span className="text-sm">
+          © {new Date().getFullYear()} Ojo Celine Shalom
+        </span>
 
-        <ul className="flex gap-6 text-sm text-neutral-300">
-          <li><a href="https://x.com/celine_onchain" target="_blank" rel="noopener noreferrer" className="hover:text-gold">X</a></li>
-          <li><a href="https://www.linkedin.com/in/celine-ojo" target="_blank" rel="noopener noreferrer" className="hover:text-gold">LinkedIn</a></li>
-          <li><a href="https://github.com/mhizalima" target="_blank" rel="noopener noreferrer" className="hover:text-gold">GitHub</a></li>
-          <li><a href="https://medium.com/@mhizalima" target="_blank" rel="noopener noreferrer" className="hover:text-gold">Medium</a></li>
-          <li><a href="mailto:celinebless2002@gmail.com" className="hover:text-gold">Email</a></li>
+        <ul className="flex gap-6 text-sm">
+          {links.map(({ label, href, external }) => (
+            <li key={label}>
+              <a
+                href={href}
+                {...(external && { target: "_blank", rel: "noopener noreferrer" })}
+                className="hover:text-[#FCA311] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FCA311]"
+              >
+                {label}
+              </a>
+            </li>
+          ))}
         </ul>
-
-        <span className="font-mono text-xs text-neutral-400">Build, Learn, Write, Explore</span>
       </div>
     </footer>
   );

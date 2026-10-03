@@ -1,54 +1,68 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const links = [
+  { href: "/projects", label: "Projects" },
+  { href: "/stack", label: "Stack" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
-  const links = [
-    { href: "#about", label: "About" },
-    { href: "#build", label: "Build" },
-    { href: "#write", label: "Write" },
-    { href: "#stack", label: "Stack" },
-    { href: "#contact", label: "Contact" },
-  ];
+  const linkClass = (href: string) =>
+    `text-sm font-medium hover:text-[#FCA311] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FCA311] ${
+      pathname === href ? "text-[#FCA311]" : "text-[#F6FAFD]"
+    }`;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur border-b border-navy">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#0A1931]">
       <nav className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#top" className="font-bold text-white text-lg">
-          <span className="text-gold">Celine_onChain</span>
-        </a>
+        <Link href="/" className="font-bold text-lg text-[#F6FAFD]">
+          Celine Ojo
+        </Link>
 
         <ul className="hidden md:flex gap-8">
           {links.map((link) => (
             <li key={link.href}>
-              <a href={link.href} className="text-sm text-neutral-300 hover:text-gold transition">
+              <Link
+                href={link.href}
+                aria-current={pathname === link.href ? "page" : undefined}
+                className={linkClass(link.href)}
+              >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
 
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-white font-semibold"
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+          className="md:hidden font-semibold text-[#F6FAFD]"
         >
           {open ? "Close" : "Menu"}
         </button>
       </nav>
 
       {open && (
-        <ul className="md:hidden flex flex-col gap-4 px-6 pb-6">
+        <ul id="mobile-menu" className="md:hidden flex flex-col gap-4 px-6 pb-6">
           {links.map((link) => (
             <li key={link.href}>
-              <a
+              <Link
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="text-sm text-neutral-300 hover:text-gold transition"
+                aria-current={pathname === link.href ? "page" : undefined}
+                className={linkClass(link.href)}
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
