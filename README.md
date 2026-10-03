@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Celine Ojo | Portfolio
+
+Personal portfolio of Celine Ojo, a full-stack and mobile developer based in Nigeria. It showcases selected projects, my tech stack, and ways to get in touch.
+
+**Live site:** [add your live link here]
+
+## Pages
+
+| Route | What it shows |
+| --- | --- |
+| `/` | Introduction, photo, and quick links to every section |
+| `/projects` | Selected work with stack, key features, live demos, and code links |
+| `/stack` | Technologies I use, grouped by area |
+| `/about` | A short background and what I focus on |
+| `/contact` | Email, GitHub, and LinkedIn |
+
+## Tech Stack
+
+- **Next.js** (App Router)
+- **React**
+- **TypeScript**
+- **Tailwind CSS**
+
+## Features
+
+- Multi-page layout with a shared navbar and footer
+- Active-page highlighting in the navigation
+- Project cards driven by a single data file
+- Responsive design with a mobile menu
+- Consistent color palette and keyboard-visible focus states
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── layout.tsx        # Shared layout: navbar, footer, fonts, metadata
+│   ├── globals.css       # Theme colors and global styles
+│   ├── page.tsx          # Home
+│   ├── about/page.tsx
+│   ├── projects/page.tsx
+│   ├── stack/page.tsx
+│   └── contact/page.tsx
+├── components/
+│   ├── Navbar.tsx
+│   └── Footer.tsx
+└── data/
+    └── projects.ts       # Project content
+public/
+└── celine.jpg            # Profile photo
+```
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Clone the repository
+git clone https://github.com/mhizalima/celine-portfolio.git
+cd celine-portfolio
+
+# Install dependencies
+npm install
+
+# Start the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To create a production build:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Customizing
 
-To learn more about Next.js, take a look at the following resources:
+- **Add or edit projects:** update `src/data/projects.ts`. Each project supports a name, status, category, description, stack, features, learning notes, a GitHub link, and an optional live link.
+- **Change colors:** edit the values in `src/app/globals.css`.
+- **Update the photo:** replace `public/celine.jpg`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Color Palette
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Use | Color |
+| --- | --- |
+| Background | `#B3CFE5` |
+| Call to action | `#FCA311` |
+| Text and dark surfaces | `#0A1931` |
+| Light surfaces and text on dark | `#F6FAFD` |
 
-## Deploy on Vercel
+## Contact
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Email: [celinebless2002@gmail.com](mailto:celinebless2002@gmail.com)
+- GitHub: [@mhizalima](https://github.com/mhizalima)
+- LinkedIn: [Celine Ojo](https://www.linkedin.com/in/celine-ojo)
