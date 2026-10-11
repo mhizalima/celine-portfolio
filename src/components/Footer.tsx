@@ -1,6 +1,8 @@
 const links = [
   { label: "GitHub", href: "https://github.com/mhizalima", external: true },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/celine-ojo", external: true },
+  { label: "X", href: "https://x.com/celine_onchain", external: true },
+  { label: "Telegram", href: "https://t.me/MhizAlima", external: true },
   { label: "Email", href: "mailto:celinebless2002@gmail.com", external: false },
 ];
 

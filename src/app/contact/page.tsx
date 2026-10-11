@@ -1,5 +1,11 @@
 const EMAIL = "celinebless2002@gmail.com";
-const GITHUB = "https://github.com/mhizalima";
+
+const links = [
+  { label: "GitHub", href: "https://github.com/mhizalima" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/celine-ojo" },
+  { label: "X", href: "https://x.com/celine_onchain" },
+  { label: "Telegram", href: "https://t.me/MhizAlima" },
+];
 
 export default function ContactPage() {
   return (
@@ -20,14 +26,17 @@ export default function ContactPage() {
         >
           Email me
         </a>
-        <a
-          href={GITHUB}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="rounded-lg border border-[#0A1931] px-6 py-3 font-semibold text-[#0A1931] hover:bg-[#0A1931] hover:text-[#F6FAFD] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0A1931]"
-        >
-          View GitHub
-        </a>
+        {links.map(({ label, href }) => (
+          <a
+            key={label}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-lg border border-[#0A1931] px-6 py-3 font-semibold text-[#0A1931] hover:bg-[#0A1931] hover:text-[#F6FAFD] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0A1931]"
+          >
+            {label}
+          </a>
+        ))}
       </div>
 
       <p className="text-sm">{EMAIL}</p>
