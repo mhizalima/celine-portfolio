@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const links = [
   { href: "/projects", label: "Projects" },
@@ -16,15 +17,25 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const linkClass = (href: string) =>
-    `text-sm font-medium hover:text-[#FCA311] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FCA311] ${
-      pathname === href ? "text-[#FCA311]" : "text-[#F6FAFD]"
+    `text-sm font-medium hover:text-[#FCA311] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FCA311] ${pathname === href ? "text-[#FCA311]" : "text-[#F6FAFD]"
     }`;
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#0A1931]">
       <nav className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="font-bold text-lg text-[#F6FAFD]">
-          Celine Ojo
+        <Link
+          href="/"
+          aria-label="Celine Ojo, home"
+          className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FCA311]"
+        >
+          <Image
+            src="/celine-icon-nav.svg"
+            alt="Celine Ojo"
+            width={40}
+            height={40}
+            priority
+            unoptimized
+          />
         </Link>
 
         <ul className="hidden md:flex gap-8">
